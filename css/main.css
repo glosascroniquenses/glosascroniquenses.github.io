@@ -27,11 +27,11 @@ a:hover {
     text-decoration: underline;
 }
 h1 {
-    font-size: 102px;
+    font-size: 100px;
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
     color: #750C41;
     text-align: center;
-    line-height: 150px;
+    line-height: 120px;
 }
 p {
     font-size: 1.5em;
