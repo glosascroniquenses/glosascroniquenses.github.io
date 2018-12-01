@@ -5,8 +5,11 @@ body {
     
 }
 nav ul {
+    margin-left: 150px;
+    margin-right: 150px;
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
     font-size:30px;
+    align-content: center;
  
 }
 
