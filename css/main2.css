@@ -1,0 +1,63 @@
+body {
+    margin: 60px auto;
+    width: 70%;
+    background-image: "/fotos/fondo1.jpg";
+    
+}
+nav ul {
+    font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
+    font-size:15px;
+ 
+}
+
+footer ul {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+}
+
+nav ul li {
+    display: inline;
+    background-color:#D41C62;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+
+ 
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+a:hover {
+    text-decoration: underline;
+}
+h1 {
+    font-size: 30px;
+    font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
+    color: #750C41;
+
+}
+p {
+    font-size: 15px;
+    font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
+    line-height: 1.4em;
+    color: #333;
+ 
+}
+footer {
+    font-size: .8em;
+}
+
+ul.posts { 
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
+}
+
+ul.posts li {
+    list-style: none;
+}
