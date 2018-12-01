@@ -5,8 +5,8 @@ body {
     
 }
 nav ul {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
     font-size:30px;
     align-content: center;
@@ -40,7 +40,7 @@ p {
     line-height: 1.4em;
     color: #333;
     text-align: center;
-    line-height: 250px;
+
 }
 
 ul.posts { 
