@@ -84,15 +84,15 @@ ul.posts li {
     list-style: none;
 }
 
-boton{
-        font-size:10px;
-        font-family:Verdana,Helvetica;
+button{
+        font-size: 1.2em;
+        font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
         font-weight:bold;
         color:white;
-        background:#638cb5;
-        border:0px;
-        width:80px;
-        height:19px;
+        background:#D41C62;
+        width:200px;
+        height:32px;
        }
+
 
 #more {display: none;}
