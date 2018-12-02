@@ -25,4 +25,20 @@
             <p>Bibcronista1</p>
 			
 	</body>
+	
+<html lang="es">
+
+<main id="main" role="main">
+<div class="content">
+{{ content }}
+</div>
+<nav id="autores">
+<h2>Autores</h2>
+{% for autore in site.autores %}
+<a href="{{ autore.url }}">{{ autore.title }}</a>
+{% endfor %}
+</nav>
+</main>
+</html>
+
 </html>
