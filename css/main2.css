@@ -40,6 +40,20 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+a1 {
+    text-decoration: none;
+    background-color: #F2F0F1;
+    font-size: 1.2em;
+    font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
+    line-height: 1.4em;
+    color: #333;
+    text-align: justify;
+}
+a1:hover {
+    text-decoration: underline;
+}
+
 h1 {
     font-size: 30px;
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
