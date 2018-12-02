@@ -5,8 +5,6 @@ body {
     
 }
 nav ul {
-    margin-left: 250px;
-    margin-right: 150px;
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
     font-size:30px;
     align-content: center;
@@ -16,6 +14,7 @@ nav ul {
 nav ul li {
     display: inline;
     background-color:#D41C62;
+    border-radius:10px
 }
 
 
