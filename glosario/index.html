@@ -11,4 +11,15 @@ Este proyecto surge de una rica veta de investigación basada en la teoría post
 
 
 </body>
+
+
+<article>
+    <img src="{{ site.baseurl }}/imagenes/bannerprincipal.jpg" alt="">
+    {% if page.title != 'Glosario' %}
+    <h1>{{ page.title }}</h1>
+    {% endif %}
+    {{ content }}
+</article>
+© 2018 GitHub, Inc.
+
 </html>
