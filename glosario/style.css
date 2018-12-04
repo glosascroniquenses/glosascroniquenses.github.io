@@ -1,29 +1,9 @@
----
----
-
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html,body {
-  margin:0;
-  padding:0;
-}
-
-html {
-  font: 16px/1.675 Georgia, serif;
-  color: #202020;
-}
-
 body {
     margin: 5px auto;
     width: 90%;
     background-image: url("/fotos/fondo2.jpg");
     
 }
-
 nav ul {
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
     font-size:30px;
@@ -60,7 +40,6 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
 
 h1 {
     font-size: 30px;
@@ -121,21 +100,6 @@ button{
 
 #more {display: none;}
 
-#banner {
-  display:flex;
-  flex-direction: column-reverse;
-  background-color: #800;
-  color: white;
-  color: rgba(white,.925);
-  font-family: "Gill Sans", sans-serif;
-  padding: 2em;
-  h1 {
-    margin:0;
-    font-weight: normal;
-  }
-}
-
-
 
 #main {
   padding: 2em;
@@ -171,54 +135,3 @@ button{
   }
 }
 
-#palabras {
-  display:flex;
-
-  h2 {
-    font-size:1.25rem;
-  }
-}
-
-#palabras-nav {
-   width: 20%;
-  font-size: .825rem;
-  a,:link {
-    display:block;
-    text-decoration:none;
-    color: #800;
-  }
-}
-
-#tables {
-  width: 66%;
-}
-
-#tables section {
-  display:none;
-}
-
-#tables section:target {
-  display:block;
-}
-
-#tables table {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: .825rem;
-}
-
-#tables td {
-    padding: 5px 10px;
-}
-
-#tables thead th {
-    background: #585858;
-    color: white;
-    padding: 5px 10px;
-    line-height: 1.25;   
-}
-
-#tables tbody td {
-    background: #efefef;
-    background: rgba(0,0,0,0.063);
-    min-width: 100px;
-}
