@@ -56,11 +56,10 @@ h2 {
 }
 
 h3 {
-    font-size: 15px;
+    font-size: 20px;
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
-    line-height: 1.4em;
-    color: #333;
-    font-style: italic;
+    color: #750C41;
+    font-weight: bold;
 
 }
 
