@@ -1,38 +1,50 @@
 <!DOCTYPE html>
-<html lang="es">
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="style.css">
+<html>
+	<head>
+		<title>Glosario</title>
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
 
-<body>
-	
-<title>Glosario</title>
-
-	
-<nav>
-<ul>
-<li><a href="/">Inicio</a></li>
+	</head>
+	<body>
+		
+		<nav>
+    		<ul>
+        		<li><a href="/">Inicio</a></li>
 	        	<li><a href="/proyecto">Proyecto</a></li>
         		<li><a href="/glosario">Glosario</a></li>
         		<li><a href="/edicion">Criterios de edición</a></li>
 			<li><a href="/publicaciones">Publicaciones</a></li>
 			<li><a href="/trabajo">Equipo de trabajo</a></li>
 			<li><a href="/contacto">Contacto</a></li>
-</ul>
-</nav>
+    		</ul>
+		</nav>
+		<div class="container">
+    		<div class="blurb">
+        		<h1>Cronistas</h1>
+	
+			
+
+			
+
+    		</div><!-- /.blurb -->
+		</div><!-- /.container -->
+	   
+
+
 
 
 <main id="main" role="main">
-<div class="content">
-{{ content }}
-</div>
-<nav id="autores">
-<h1>Cronistas</h1>
 
-<h2>Autores</h2>
+<nav id="autores">
+
 {% for autore in site.autores %}
-<a href="{autore.url}">{autore.title}</a>
+<a href="/autore.url">Hernando Pizarro</a>
 {% endfor %}
 </nav>
+	
+        <p>
+        Pizarro, Hernando. “Carta de Hernando Pizarro a la Audiencia de Santo Domingo. A los magníficos señores los señores oidores de la Audiencia Real de Su Magestad que residen en la ciudad de Sancto Domingo” en Biblioteca Peruana. Primera Serie, Tomo I, Editores Técnicos Asociados, Lima, 1968, 117-132.
+	</p>
 </main>
 </body>
 </html>
