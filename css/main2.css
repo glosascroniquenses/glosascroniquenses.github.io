@@ -41,19 +41,6 @@ a:hover {
     text-decoration: underline;
 }
 
-a1 {
-    text-decoration: none;
-    background-color: #F2F0F1;
-    font-size: 1.2em;
-    font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
-    line-height: 1.4em;
-    color: #333;
-    text-align: justify;
-}
-a1:hover {
-    text-decoration: underline;
-}
-
 h1 {
     font-size: 30px;
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
@@ -113,25 +100,3 @@ button{
 
 #more {display: none;}
 
-#cronistas {
-  display:block;
-  background: hsla(30,25%,50%,.1);
-  width: 20%;
-  margin-right: 2em;
-  padding: 2em;
-
-  h1,h2 {
-    font-size: 1rem;
-    margin:0;
-    font-weight: normal;
-  }
-
-  h1 {
-      font-size: 1.1rem;
-      border-bottom: 1px solid rgba(black,.2);
-  }
-  a {
-    display:block;
-    font-size: .825rem;
-  }
-}
