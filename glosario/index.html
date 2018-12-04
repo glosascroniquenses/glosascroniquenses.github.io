@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <meta charset="utf-8">
-<title>Glosas</title>
-<link rel="stylesheet" href="{{ site.baseurl }}/style.css">
-<header role="banner" id="banner">
-<h1>{{ site.title }}</h1>
-<em class="eyebrow">{{ site.program }}</em>
+<title>Glosario</title>
+<header>
+<h1>Glosario</h1>
 </header>
+	
 <nav id="global">
  
 <li><a href="/">Inicio</a></li>
@@ -18,16 +17,9 @@
 			<li><a href="/contacto">Contacto</a></li>
 </nav>
 
-<article>
-    <img src="{{ site.baseurl }}/imagenes/bannerprincipal.jpg" alt="">
-    {{ content }}
-</article>
 
 <article>
-    <header>
-    <img src="{{ site.baseurl }}/imagenes/{{ page.data }}.jpg" alt="">
-    <h1>{{ page.title }}</h1>
-    </header>
+
     {{ content }}
 
     {% capture saved_word %}{{ current_word }}{% endcapture %}{% endfor %}{% endcapture %}
