@@ -3,11 +3,9 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Glosario</title>
-<header>
-<h1>Glosario</h1>
-</header>
+
 	
-<nav id="global">
+<nav>
  
 <li><a href="/">Inicio</a></li>
 	        	<li><a href="/proyecto">Proyecto</a></li>
@@ -19,54 +17,16 @@
 </nav>
 
 
-<article>
-
-    {{ content }}
-
-    {% capture saved_word %}{{ current_word }}{% endcapture %}{% endfor %}{% endcapture %}
-
-      {% assign unique_word_array = unique_word_string | split: ","%}
-      <nav class="local" id="palabras-nav">
-      {% for word in unique_word_array %}
-	<a href="#{{ word | downcase }}">{{ word }}</a>
-      {% endfor %}
-      </nav>
-
-      <div id="tables">
-      {% for word in unique_word_array %}
-	<section id="{{ word | downcase }}">
-        <h2>{{ word }}</h2>
-    	<table>
-          <thead>
-            <tr>
-              <th>Texto pag No</th>
-	      <th>Cita</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for row in rows %}
-          
-          {% endfor %}
-      </tbody>
-    </table>
-    </section>
-    {% endfor %}
-    </div>
-</div>
-
-</article>
-
 <main id="main" role="main">
 <div class="content">
 {{ content }}
 </div>
 <nav id="autores">
-<h1>Navegación</h1>
-<h2>Palabras</h2>
-<a href="{{ site.baseurl }}/palabrasgeneral/">Glosario General</a>
+<h1>Cronistas</h1>
+
 <h2>Autores</h2>
 {% for autore in site.autores %}
-<a href="{{ autore.url }}">{{ autore.title }}</a>
+<a href="{autore.url}">{autore.title}</a>
 {% endfor %}
 </nav>
 </main>
