@@ -8,12 +8,7 @@
 <em class="eyebrow">{{ site.program }}</em>
 </header>
 <nav id="global">
-<a href="{{ site.baseurl }}/">Inicio</a>
-<a href="{{ site.baseurl }}/edicion">Criterios de edición</a>
-<a href="{{ site.baseurl }}/reonocimientos">Equipo de trabajo</a>
-<a href="{{ site.baseurl }}/publicaciones">Publicaciones</a>
-<a href="{{ site.baseurl }}/contactenos">Contacto</a>
-  
+ 
 <li><a href="/">Inicio</a></li>
 	        	<li><a href="/proyecto">Proyecto</a></li>
         		<li><a href="/glosario">Glosario</a></li>
@@ -25,9 +20,6 @@
 
 <article>
     <img src="{{ site.baseurl }}/imagenes/bannerprincipal.jpg" alt="">
-    {% if page.title != 'Home' %}
-    <h1>{{ page.title }}</h1>
-    {% endif %}
     {{ content }}
 </article>
 
@@ -38,12 +30,7 @@
     </header>
     {{ content }}
 
-    {% if page.data %}
-    <div id="palabras">
-
-      {% assign rows = site.data[page.data] %}
-
-      {% capture unique_word_string %}{% for row in rows %}{% capture current_word %}{{ row.Palabra }}{% endcapture %}{% if current_word == saved_word %}{% else %}{{ row.Palabra }},{% endif %}{% capture saved_word %}{{ current_word }}{% endcapture %}{% endfor %}{% endcapture %}
+    {% capture saved_word %}{{ current_word }}{% endcapture %}{% endfor %}{% endcapture %}
 
       {% assign unique_word_array = unique_word_string | split: ","%}
       <nav class="local" id="palabras-nav">
@@ -65,12 +52,7 @@
           </thead>
           <tbody>
           {% for row in rows %}
-          {% if row.Palabra == word %}
-            <tr>
-              <td>{{ row.pagina }}</td>
-              <td>{{ row.cita }}</td>
-            </tr>
-          {% endif %}
+          
           {% endfor %}
       </tbody>
     </table>
@@ -78,7 +60,7 @@
     {% endfor %}
     </div>
 </div>
-    {% endif %}
+
 </article>
 
 <main id="main" role="main">
