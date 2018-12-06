@@ -1,31 +1,44 @@
----
----
-
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html,body {
-  margin:0;
-  padding:0;
-}
-
-html {
-  font: 16px/1.675 Georgia, serif;
-  color: #202020;
-}
-
 body {
     margin: 5px auto;
     width: 90%;
     background-image: url("/fotos/fondo2.jpg");
     
 }
+nav ul {
+    font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
+    font-size:30px;
+    text-align: center;
+ 
+}
 
-h1,h2 {
-  font-weight: normal;
+footer ul {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+}
+
+nav ul li {
+    display: inline;
+    background-color:#D41C62;
+    border-radius:10px;
+    display: inline-block;
+    float: none;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+
+ 
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+a:hover {
+    text-decoration: underline;
 }
 
 h1 {
@@ -63,37 +76,30 @@ p {
 footer {
     font-size: .8em;
 }
-#banner {
-  display:flex;
-  flex-direction: column-reverse;
-  background-color: #800;
-  color: white;
-  color: rgba(white,.925);
-  font-family: "Gill Sans", sans-serif;
-  padding: 2em;
-  h1 {
-    margin:0;
-    font-weight: normal;
-  }
+
+ul.posts { 
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
 }
 
-#global {
-  background-color: #800;
-  padding: 0 2em;
-  display: flex;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  
-  
- 
-a {
-    text-decoration: none;
-    color: #FFFFFF;
-}
-a:hover {
-    text-decoration: underline;
+ul.posts li {
+    list-style: none;
 }
 
-  
+button{
+        font-size: 1.2em;
+        font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
+        font-weight:bold;
+        color:white;
+        background:#D41C62;
+        width:200px;
+        height:32px;
+        border-radius:10px
+       }
+
+
+#more {display: none;}
+
 
 #main {
   position: absolute;
@@ -182,55 +188,3 @@ a:hover {
     background: rgba(0,0,0,0.063);
     min-width: 100px;
 }
-
-nav ul {
-    font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
-    font-size:30px;
-    text-align: center;
- 
-}
-
-footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
-    list-style: none;
-    font-weight: bold;
-}
-
-nav ul li {
-    display: inline;
-    background-color:#D41C62;
-    border-radius:10px;
-    display: inline-block;
-    float: none;
-}
-
-footer ul li {
-    display: inline;
-    margin-right: 20px;
-
- 
-}
-
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
-}
-
-ul.posts li {
-    list-style: none;
-}
-
-button{
-        font-size: 1.2em;
-        font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
-        font-weight:bold;
-        color:white;
-        background:#D41C62;
-        width:200px;
-        height:32px;
-        border-radius:10px
-       }
-
-
-#more {display: none;}
