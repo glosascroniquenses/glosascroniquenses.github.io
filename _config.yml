@@ -1,7 +1,7 @@
 # Site Metadata
-title: "Glosas Croniquenses"
-program: "Programa de Estudios Andinos"
-url: "http://glosas.scholarslab.org"
+title: "Prueba"
+program: "prueba1"
+url: "https://glosascroniquenses.github.io/"
 baseurl: ""
 
 # Build Settings
@@ -18,6 +18,6 @@ defaults:
   -
     scope:
       path: ""
-      type: cronistas
+      type: autores
     values:
       layout: autore
