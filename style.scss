@@ -122,6 +122,19 @@ button{
 }
 
 #autores {
+  width: 90%;
+  margin-right: 2em;
+  padding: 2em;
+  position: absolute;
+
+  }
+  a {
+
+    font-size: .825rem;
+  }
+}
+
+#listapalabras {
   display:block;
   background: hsla(30,25%,50%,.1);
   width: 20%;
@@ -145,7 +158,6 @@ button{
     font-size: .825rem;
   }
 }
-
 #palabras {
   display:flex;
 
