@@ -111,37 +111,22 @@ button{
 
 
 #main {
-  position: absolute;
-  border: 3px black;
-  width: 90%;
+  padding: 2em;
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
-
 
 .content {
     width: 80%;
 }
 
 #autores {
-  width: 90%;
-  margin-right: 2em;
-  padding: 2em;
-  position: absolute;
-
-  }
-  a {
-
-    font-size: .825rem;
-  }
-}
-
-#listapalabras {
   display:block;
   background: hsla(30,25%,50%,.1);
   width: 20%;
   margin-right: 2em;
   padding: 2em;
-  position: absolute;
-  right: 0;
 
   h1,h2 {
     font-size: 1rem;
@@ -158,6 +143,7 @@ button{
     font-size: .825rem;
   }
 }
+
 #palabras {
   display:flex;
 
@@ -209,5 +195,3 @@ button{
     background: rgba(0,0,0,0.063);
     min-width: 100px;
 }
-
-
