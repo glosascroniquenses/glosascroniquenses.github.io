@@ -3,11 +3,11 @@ layout: default
 ---
 <article>
     <header>
-    <h1>{{ page.title }}</h1>
+    <h1><a href="{{ autore.url }}">{{ page.title }}</a></h1>
     </header>
 	
-        <a href="{{ autore.url }}">{{ autore.title }}</a>
-	<a href="{{ autore.url }}">{{ page.title }}</a>
+        {{ page.title }}
+	
 	
 	
 <p>{{ content }}</p>
