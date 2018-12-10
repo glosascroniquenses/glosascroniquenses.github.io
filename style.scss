@@ -111,10 +111,9 @@ button{
 
 
 #main {
-  padding: 2em;
-  display:flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  position: absolute;
+  border: 3px black;
+  width: 65%;
 }
 
 .content {
@@ -127,6 +126,8 @@ button{
   width: 20%;
   margin-right: 2em;
   padding: 2em;
+  position: absolute;
+  right: 0;
 
   h1,h2 {
     font-size: 1rem;
