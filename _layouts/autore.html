@@ -6,9 +6,6 @@ layout: default
     <h1><a href="{{ autore.url }}" style="color:#750C41;">{{ page.title }}</a></h1>
     </header>
     <p>{{ page.text1 }}</p>
-	<span id="dots">...</span><span id="more">
-    <p>{{ page.text2 }}</p>
-	</span>
 
     {% if page.data %}
 	
@@ -74,4 +71,8 @@ layout: default
 </div>
 	
     {% endif %}
+</article>
+
+<article>
+	<p>{{ content }}</p>
 </article>
