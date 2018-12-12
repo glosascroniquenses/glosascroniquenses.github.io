@@ -75,6 +75,7 @@ layout: default
 </div>
 	
     {% endif %}
+	  
 </article>
 
   {% if page.title != "{{ autore.url }}" %}
@@ -84,5 +85,7 @@ layout: default
     <h1><a href="{{ autore.url }}" style="color:#750C41;">{{ page.title }}</a></h1>
     </header>
     {{ content }}
-	  {% endif %}
+	
 	</article>
+
+  {% endif %}
