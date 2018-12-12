@@ -5,8 +5,11 @@ layout: default
     <header>
     <h1><a href="{{ autore.url }}" style="color:#750C41;">{{ page.title }}</a></h1>
     </header>
-    <p>{{ content }}</p>
-	
+    <p>{{ page.text1 }}</p>
+	<span id="dots">...</span><span id="more">
+    <p>{{ page.text2 }}</p>
+	</span>
+
     {% if page.data %}
 	
     <div id="palabras">
