@@ -16,13 +16,14 @@ layout: default
     {% endif %}
 </article>
 	
-    {% if page.title != {{site.data[page.data]}} %}
-    <div id='oculto'>
-    {{ page.text}}
-    </div>
-    {% endif %}
+
 	
     {% if page.data %}
+
+     <div id='oculto'>
+    {{ page.text}}
+     </div>
+	
     <div id="palabras">
 	    
       {% assign rows = site.data[page.data] %}
@@ -36,10 +37,16 @@ layout: default
       {% endfor %}
       </nav>
 
+     <div id='oculto'>
+    {{ page.text}}
+     </div>
+	    
+	    
       <div id="tables">
       {% for word in unique_word_array %}
-	<section id="{{ word | downcase }}">
+	<section id="{{ word | downcase }}">		
         <h2>{{ word }}</h2>
+		
     	<table>
           <thead>
             <tr>
@@ -82,5 +89,10 @@ layout: default
     {% endfor %}
     </div>
 </div>
+	
+     <div id='oculto'>
+    {{ page.text}}
+     </div>
+	
     {% endif %}
 </article>
