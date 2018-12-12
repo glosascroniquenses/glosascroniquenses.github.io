@@ -7,6 +7,23 @@ layout: default
     </header>
 	
 <p>{{ content }}</p>
+	
+{% if page.data %}
+	probando 123
+{% endif %}
+
+{% if autore.url %}
+	probando 456
+{% endif %}
+
+{% if page.autore %}
+	probando 789
+{% endif %}
+	
+{% if page.autore.url %}
+	prob{{ page.title }}
+{% endif %}
+	
 
     {% if page.data %}
     <div id="palabras">
