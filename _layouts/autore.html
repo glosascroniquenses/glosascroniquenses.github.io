@@ -10,11 +10,11 @@ layout: default
 	
 <p>{{ page.text }}</p>
 	
-<article>
+
     {% if page.title != {{ autore.url}} %}
     <h1>{{ page.text}}</h1>
     {% endif %}
-</article>
+
 	
 
 	
@@ -46,6 +46,10 @@ layout: default
       {% for word in unique_word_array %}
 	<section id="{{ word | downcase }}">		
         <h2>{{ word }}</h2>
+		
+<div id='oculto'>
+{{ page.text}}
+</div>
 		
     	<table>
           <thead>
