@@ -46,21 +46,41 @@ layout: default
     	<table>
           <thead>
             <tr>
-              <th>Texto pag No</th>
-	      <th>Cita</th>
+              <th>Cita</th>
+	      <th>Texto pag No</th>
             </tr>
           </thead>
           <tbody>
           {% for row in rows %}
           {% if row.Palabra == word %}
             <tr>
-              <td>{{ row.pagina }}</td>
               <td>{{ row.cita }}</td>
+	      <td>{{ row.pagina }}</td>
             </tr>
           {% endif %}
           {% endfor %}
       </tbody>
     </table>
+		
+		<table>
+          <thead>
+            <tr>
+              <th>Cita</th>
+	      <th>Texto pag No</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for row in rows %}
+          {% if row.Palabra == word %}
+            <tr>
+              <td>{{ row.cita }}</td>
+	      <td>{{ row.pagina }}</td>
+            </tr>
+          {% endif %}
+          {% endfor %}
+      </tbody>
+    </table>
+		
     </section>
     {% endfor %}
     </div>
