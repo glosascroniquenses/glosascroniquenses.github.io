@@ -9,6 +9,12 @@ layout: default
 <p>{{ content }}</p>
 	
 <p>{{ page.text }}</p>
+	
+<article>
+    {% if page.title != {{ autore.url}} %}
+    <h1>{{ page.text}}</h1>
+    {% endif %}
+</article>
 
     {% if page.data %}
     <div id="palabras">
