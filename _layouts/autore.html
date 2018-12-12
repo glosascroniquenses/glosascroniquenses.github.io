@@ -8,29 +8,11 @@ layout: default
 	
 <p>{{ content }}</p>
 	
-{% if page.data %}
-	probando 123
-{% endif %}
-
-{% if autore.url %}
-	probando 456
-{% endif %}
-
-{% if page.autore %}
-	probando 789
-{% endif %}
-	
-{% if page.autore.url %}
-	prob{{ page.title }}
-{% endif %}
-
-{{ page.text }}
+<p>{{ page.text }}</p>
 
     {% if page.data %}
     <div id="palabras">
 	    
-      {{ page.text }}
-
       {% assign rows = site.data[page.data] %}
 
       {% capture unique_word_string %}{% for row in rows %}{% capture current_word %}{{ row.Palabra }}{% endcapture %}{% if current_word == saved_word %}{% else %}{{ row.Palabra }},{% endif %}{% capture saved_word %}{{ current_word }}{% endcapture %}{% endfor %}{% endcapture %}
