@@ -5,9 +5,9 @@ layout: default
     <header>
     <h1><a href="{{ autore.url }}" style="color:#750C41;">{{ page.title }}</a></h1>
     </header>
-	
 
-	
+<p>{{ content }}</p>
+
 	
     {% if page.data %}
 	
@@ -24,53 +24,9 @@ layout: default
       {% endfor %}
       </nav>
 	    
-      <div id="tables">
-      {% for word in unique_word_array %}
-	<section id="{{ word | downcase }}">		
-        <h2>{{ word }}</h2>
-		
-    	<table>
-          <thead>
-            <tr>
-              <th>Cita</th>
-	      <th>Texto pag No</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for row in rows %}
-          {% if row.Palabra == word %}
-            <tr>
-              <td>{{ row.cita }}</td>
-	      <td>{{ row.pagina }}</td>
-            </tr>
-          {% endif %}
-          {% endfor %}
-      </tbody>
-    </table>
-		
-		<table>
-          <thead>
-            <tr>
-              <th>Cita</th>
-	      <th>Texto pag No</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for row in rows %}
-          {% if row.Palabra == word %}
-            <tr>
-              <td>{{ row.cita }}</td>
-	      <td>{{ row.pagina }}</td>
-            </tr>
-          {% endif %}
-          {% endfor %}
-      </tbody>
-    </table>
-		
-    </section>
-    {% endfor %}
+
     </div>
-</div>
 	
     {% endif %}
+	
 </article>
