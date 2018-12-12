@@ -23,10 +23,13 @@ layout: default
 {% if page.autore.url %}
 	prob{{ page.title }}
 {% endif %}
-	
+
+{{ page.text }}
 
     {% if page.data %}
     <div id="palabras">
+	    
+      {{ page.text }}
 
       {% assign rows = site.data[page.data] %}
 
