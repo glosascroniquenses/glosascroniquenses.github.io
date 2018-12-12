@@ -8,21 +8,8 @@ layout: default
 	
 <p>{{ content }}</p>
 	
-<p>{{ page.text }}</p>
-	
-
-    {% if page.title != {{ autore.url}} %}
-    <h1>{{ page.text}}</h1>
-    {% endif %}
-
-	
-
 	
     {% if page.data %}
-
-     <div id='oculto'>
-    {{ page.text}}
-     </div>
 	
     <div id="palabras">
 	    
@@ -36,20 +23,11 @@ layout: default
 	<a href="#{{ word | downcase }}">{{ word }}</a>
       {% endfor %}
       </nav>
-
-     <div id='oculto'>
-    {{ page.text}}
-     </div>
-	    
 	    
       <div id="tables">
       {% for word in unique_word_array %}
 	<section id="{{ word | downcase }}">		
         <h2>{{ word }}</h2>
-		
-<div id='oculto'>
-{{ page.text}}
-</div>
 		
     	<table>
           <thead>
@@ -93,10 +71,6 @@ layout: default
     {% endfor %}
     </div>
 </div>
-	
-     <div id='oculto'>
-    {{ page.text}}
-     </div>
 	
     {% endif %}
 </article>
