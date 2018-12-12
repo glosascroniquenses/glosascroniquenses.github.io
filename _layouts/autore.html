@@ -15,7 +15,13 @@ layout: default
     <h1>{{ page.text}}</h1>
     {% endif %}
 </article>
-
+	
+    {% if page.title != {{site.data[page.data]}} %}
+    <div id='oculto'>
+    {{ page.text}}
+    </div>
+    {% endif %}
+	
     {% if page.data %}
     <div id="palabras">
 	    
