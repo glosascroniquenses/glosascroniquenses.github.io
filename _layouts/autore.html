@@ -36,14 +36,14 @@ layout: default
             </tr>
           </thead>
           <tbody>
-          {% for row in rows %}
+
           {% if row.Palabra == word %}
             <tr>
               <td>{{ row.lengua }}</td>
 	      <td>{{ row.notas }}</td>
             </tr>
           {% endif %}
-          {% endfor %}
+
       </tbody>
     </table>
 		
