@@ -28,22 +28,7 @@ layout: default
 	<section id="{{ word | downcase }}">		
         <h2>{{ word }}</h2>
 		
-    	<table>
-          <thead>
-            <tr>
-              <th>Lengua</th>
-	      <th>Notas de Lengua</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for row in rows %}
-            <tr>
-              <td>{{ row.lengua }}</td>
-	      <td>{{ row.notas }}</td>
-	     </tr>
-          {% endfor %}
-          </tbody>
-    </table>
+
 		
 	<table>
           <thead>
