@@ -38,11 +38,11 @@ layout: default
           <tbody>
 		  {% capture unique_word_string %}
 		  {% for row in rows %}
-		  {% capture current_word %}
             <tr>
               <td>{{ row.lengua }}</td>
 	      <td>{{ row.notas }}</td>
             </tr>
+		  {% endfor %}
 		  {% endcapture %}
           </tbody>
     </table>
