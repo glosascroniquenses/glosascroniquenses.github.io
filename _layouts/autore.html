@@ -36,14 +36,18 @@ layout: default
             </tr>
           </thead>
           <tbody>
-		  {% capture unique_word_string %}
-		  {% for row in rows %}
+          {% capture unique_word_string %}
+          {% for row in rows %}
+          {% capture current_word %}
+          {% if row.Palabra == word %}
             <tr>
               <td>{{ row.lengua }}</td>
 	      <td>{{ row.notas }}</td>
             </tr>
-		  {% endfor %}
-		  {% endcapture %}
+          {% endif %}
+          {% endcapture %}
+          {% endfor %}
+          {% endcapture %}
           </tbody>
     </table>
 		
