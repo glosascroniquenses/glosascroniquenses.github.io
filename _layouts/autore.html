@@ -36,7 +36,8 @@ layout: default
             </tr>
           </thead>
           <tbody>
-          {% for row in unique_row_array %}
+          {% for row in rows %}
+		  {{ loop.index }}
             <tr>
               <td>{{ row.lengua }}</td>
 	      <td>{{ row.notas }}</td>
