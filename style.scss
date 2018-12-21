@@ -172,23 +172,23 @@ button{
 
 #tables section {
   display:none;
-      border: 1px solid red;
+
 }
 
 #tables section:target {
   display:block;
-      border: 1px solid yellow;
+   
 }
 
 #tables table {
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
     font-size: 1.2 rem;
-    border: 1px solid red;
+
 }
 
 #tables td {
     padding: 5px 10px;
-      border: 1px solid yellow;
+     
 }
 
 #tables thead th {
@@ -196,7 +196,7 @@ button{
     color: white;
     padding: 5px 10px;
     line-height: 1.25;   
-      border: 1px solid red;
+     
 }
 
 #tables tbody td {
