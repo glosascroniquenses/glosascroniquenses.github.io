@@ -44,6 +44,9 @@ trabajo: Equipo de trabajo
 _intro
 Textos introductorios por cronistas
 
+_/glosario/firmas/
+Imágenes de firmas en jpg
+
 
 
 
