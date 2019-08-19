@@ -29,6 +29,22 @@ layout: default
         <h2>{{ word }}</h2>
 		
 
+    <table>
+          <thead>
+            <tr>
+	      <th>Número de página</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for row in rows %}
+          {% if row.Palabra == word %}
+            <tr>
+	      <td valign="bottom">{{ row.pagina }}</td>		    
+            </tr>
+          {% endif %}
+          {% endfor %}
+      </tbody>
+    </table>
 		
 	<table>
           <thead>
@@ -49,22 +65,7 @@ layout: default
       </tbody>
     </table>
 		
-    <table>
-          <thead>
-            <tr>
-	      <th>Número de página</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for row in rows %}
-          {% if row.Palabra == word %}
-            <tr>
-	      <td valign="bottom">{{ row.pagina }}</td>		    
-            </tr>
-          {% endif %}
-          {% endfor %}
-      </tbody>
-    </table>
+   
 		
     </section>
     {% endfor %}
