@@ -6,7 +6,7 @@ body {
 }
 nav ul {
     font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
-    font-size:30px;
+    font-size:25px;
     text-align: center;
  
 }
@@ -85,12 +85,12 @@ ul.posts li {
 }
 
 button{
-        font-size: 1.2em;
+        font-size: 1.0em;
         font-family:'Trebuchet MS', 'Helvetica', 'Sans-Serif';
         font-weight:bold;
         color:white;
         background:#D41C62;
-        width:200px;
+        width:150px;
         height:32px;
         border-radius:10px
        }
