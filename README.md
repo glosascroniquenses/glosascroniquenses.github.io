@@ -18,6 +18,7 @@ cronista12: Hernando Pizarro
 cronista13: Hernando de Santillán
 cronista14: Pedro Sarmiento de Gamboa
 cronista15: Agustín de Zárate
+cronista16: Martín Enríquez de Almansa
 
 _data: glosario tabulado en archivos csv
 "id_palabra","Palabra","id_cronista","id_texto","cita","pagina"
