@@ -33,7 +33,7 @@
 
     <div id="palabras">
 	    
-      {% assign rows = "https://glosascroniquenses.github.io/_data/cronista01.csv" %}
+      {% assign rows = https://glosascroniquenses.github.io/_data/cronista01.csv %}
 
       {% capture unique_word_string %}{% for row in rows %}{% capture current_word %}{{ row.Palabra }}{% endcapture %}{% if current_word == saved_word %}{% else %}{{ row.Palabra }},{% endif %}{% capture saved_word %}{{ current_word }}{% endcapture %}{% endfor %}{% endcapture %}
 
