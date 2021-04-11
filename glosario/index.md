@@ -8,7 +8,7 @@ title: Home
 <img src="firmas/cronista01.jpg" align="left" width="150px">
 <h1><a href="/autores/cronista01/" style="color: #750C41;">Cristóbal de Albornoz</a></h1>
  <p>
-"PRUEBA Instrucción para descubrir todas las guacas del Pirú y sus camayos y haziendas" [ca 1581-1585] en Henrique Urbano y Pierre Duviols (eds.). Relación de las fábulas y ritos de los Incas. Madrid: Historia 16, 1989.
+"Instrucción para descubrir todas las guacas del Pirú y sus camayos y haziendas" [ca 1581-1585] en Henrique Urbano y Pierre Duviols (eds.). Relación de las fábulas y ritos de los Incas. Madrid: Historia 16, 1989.
 </br>
 </br>
 </p>
