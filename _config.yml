@@ -1,5 +1,5 @@
 # Site Metadata
-title: "Glosas Croniquenses"
+title: "Glosas croniquenses"
 program: 
 url: "https://glosascroniquenses.github.io"
 baseurl: ""
@@ -17,7 +17,7 @@ collections:
 defaults:
   -
     scope:
-      path: "/_layouts/"
+      path: ""
       type: autores
     values:
       layout: autore.html
