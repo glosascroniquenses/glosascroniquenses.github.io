@@ -17,7 +17,7 @@ collections:
 defaults:
   -
     scope:
-      path: ""
+      path: "/css/main3.css"
       type: autores
     values:
       layout: autore.html
