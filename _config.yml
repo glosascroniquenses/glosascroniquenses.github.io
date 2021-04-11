@@ -6,7 +6,9 @@ baseurl: ""
 
 # Build Settings
 incremental: true
-
+exclude:
+  - Gemfile
+  - Gemfile.lock
 collections:
   autores:
     output: true
