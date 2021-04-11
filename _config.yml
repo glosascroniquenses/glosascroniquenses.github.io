@@ -17,7 +17,7 @@ collections:
 defaults:
   -
     scope:
-      path: ""
+      path: "/_layouts/"
       type: autores
     values:
       layout: autore.html
