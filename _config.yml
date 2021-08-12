@@ -4,6 +4,9 @@ program:
 url: "glosascroniquenses.github.io"
 baseurl: ""
 
+google_analytics: G-PQM9ZGESN6
+
+
 # Build Settings
 incremental: true
 exclude:
