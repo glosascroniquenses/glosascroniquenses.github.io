@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-<meta charset="utf-8">
-<title>Glosas croniquenses</title>
-<link rel="stylesheet" href="/glosascroniquenses.github.io/style.css">
- 
-	<nav>
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Glosas croniquenses</title>
+		<link rel="stylesheet" type="text/css" href="/css/main2.css">
+	</head>
+	
+	<body>
+		<nav>
     		<ul>
-        		<li><a href="/" style="color:#FFFFFF;">Inicio</a></li>
-	        	<li><a href="/proyecto" style="color:#FFFFFF;">Proyecto</a></li>
-        		<li><a href="/Glosario" style="color:#FFFFFF;">Glosario</a></li>
-			<li><a href="/mapas" style="color:#FFFFFF;">Mapas</a></li>
-			<li><a href="/Categorias/autores/lista" style="color:#FFFFFF;">Categorías</a></li>
-        		<li><a href="/edicion" style="color:#FFFFFF;">Criterios de edición</a></li>
-			<li><a href="/publicaciones" style="color:#FFFFFF;">Publicaciones</a></li>
-			<li><a href="/trabajo" style="color:#FFFFFF;">Equipo de trabajo</a></li>
-			<li><a href="/fichas" style="color:#FFFFFF;">Fichas léxicas</a></li>
-			<li><a href="/linea" style="color:#FFFFFF;">Línea de tiempo</a></li>
-			<li><a href="/enlaces" style="color:#FFFFFF;">Enlaces</a></li>
-				<li><a href="/experiencias" style="color:#FFFFFF;">Experiencias</a></li>
- 	        		
+        		<li><a href="/">Inicio</a></li>
+	        	<li><a href="/proyecto">Proyecto</a></li>
+        		<li><a href="/Glosario">Glosario</a></li>
+				<li><a href="/mapas">Mapas</a></li>
+				<li><a href="/Categorias/autores/lista/">Categorías</a></li>
+        		<li><a href="/edicion">Criterios de edición</a></li>
+				<li><a href="/publicaciones">Publicaciones</a></li>
+				<li><a href="/trabajo">Equipo de trabajo</a></li>
+				<li><a href="/fichas">Fichas léxicas</a></li>
+				<li><a href="/linea">Línea de tiempo</a></li>
+ 				<li><a href="/enlaces">Enlaces</a></li>
+				<li><a href="/experiencias">Experiencias</a></li>
     		</ul>
-       </nav>
-  
-<main id="main" role="main">
-{{ content }}
+		</nav>
 
-</main>
+	<div class="container">
+    		<div class="blurb">
+        		<main id="main" role="main">
+					{{ content }}
+				</main>
+			</div><!-- /.blurb -->
+    </div><!-- /.container -->
+		
+	</body>				
 </html>
