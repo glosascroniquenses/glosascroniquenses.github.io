@@ -53,10 +53,10 @@
     .then(data => {
       var total = 10024 + data.count;
       document.getElementById('mi-contador').textContent = 
-        'Visitas: ' + total.toLocaleString('es-ES');
+         total.toLocaleString('es-ES');
     })
     .catch(() => {
-      document.getElementById('mi-contador').textContent = '👁 Visitas: 10.002';
+      document.getElementById('mi-contador').textContent = '10.024';
     });
 </script>
 			
