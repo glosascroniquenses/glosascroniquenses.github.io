@@ -44,7 +44,22 @@
 			
 			
 		<center><div id="sfcrzkna35yeylacrm2y4esr6e8tuf2sqff"></div><script type="text/javascript" src="https://counter2.stat.ovh/private/counter.js?c=rzkna35yeylacrm2y4esr6e8tuf2sqff&down=async" async></script><noscript><a href="https://www.contadorvisitasgratis.com" title="contadores de visitas"><img src="https://counter2.stat.ovh/private/contadorvisitasgratis.php?c=rzkna35yeylacrm2y4esr6e8tuf2sqff" border="0" title="contadores de visitas" alt="contadores de visitas"></a></noscript>
-		
+
+<!-- Contador visible desde 10.024 -->
+<div id="mi-contador" style="font-size:16px; color:#750C41;">Cargando visitas...</div>
+<script>
+  fetch('https://api.counterapi.dev/v1/glosascroniquenses/visitas/up')
+    .then(r => r.json())
+    .then(data => {
+      var total = 10002 + data.count;
+      document.getElementById('mi-contador').textContent = 
+        '👁 Visitas: ' + total.toLocaleString('es-ES');
+    })
+    .catch(() => {
+      document.getElementById('mi-contador').textContent = '👁 Visitas: 10.002';
+    });
+</script>
+			
 
 </br>
 </br>
