@@ -51,7 +51,7 @@
   fetch('https://api.counterapi.dev/v1/glosascroniquenses/visitas/up')
     .then(r => r.json())
     .then(data => {
-      var total = 10002 + data.count;
+      var total = 10024 + data.count;
       document.getElementById('mi-contador').textContent = 
         '👁 Visitas: ' + total.toLocaleString('es-ES');
     })
