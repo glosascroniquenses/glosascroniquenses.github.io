@@ -53,7 +53,7 @@
     .then(data => {
       var total = 10024 + data.count;
       document.getElementById('mi-contador').textContent = 
-        '👁 Visitas: ' + total.toLocaleString('es-ES');
+        'Visitas: ' + total.toLocaleString('es-ES');
     })
     .catch(() => {
       document.getElementById('mi-contador').textContent = '👁 Visitas: 10.002';
