@@ -45,10 +45,10 @@
 <!-- Contador visible desde 10.024 fecha cambio de contador: 28/03/2026, sigue con error, cuenta nuevamente desde 05/04/2026 -->
 <div id="mi-contador" style="font-size:22px; color:#750C41; font-weight:bold; text-align:center;">Cargando visitas...</div>
 <script>
-  fetch('https://api.countapi.xyz/hit/glosascroniquenses.com/visits')
+  fetch('https://api.counterapi.dev/v1/glosascroniquenses/visitas/up')
     .then(r => r.json())
     .then(data => {
-      var total = 10024 + data.value;
+      var total = 10024 + data.count;
       document.getElementById('mi-contador').textContent = 
          total.toLocaleString('es-ES');
     })
