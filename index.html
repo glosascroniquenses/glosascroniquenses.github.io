@@ -58,8 +58,6 @@
 </script>
 
 <!-- REVISAR EN:	https://librecounter.org/glosascroniquenses.github.io/siteStats-->
-				
-<!--  BORRAR!!! <div id="mi-contador" style="font-size:22px; color:#750C41; font-weight:bold; text-align:center;">Cargando visitas...</div>-->
 
 <script>
   const NAMESPACE = 'glosascroniquenses';  // cámbialo si quieres, pero que sea único
@@ -96,41 +94,7 @@
 
   iniciarContador();
 </script>
-
-
-
-<!-- Contador invisible: solo registra la visita, no se ve nada -->
-<!-- Revisar en: https://countapi.xyz/get/glosascroniquenses/visitas -->
-<script>
-  const NAMESPACE = 'glosascroniquenses';  // Cámbialo por un nombre único para tu sitio
-  const KEY = 'visitas';
-  const BASE = 10024;  // Tu número de partida
-
-  async function registrarVisitaInvisible() {
-    try {
-      // Intentar obtener el contador actual
-      let res = await fetch(`https://countapi.xyz/get/${NAMESPACE}/${KEY}`);
-      let data = await res.json();
-
-      if (!data.value) {
-        // Crear el contador con el valor BASE
-        await fetch(`https://countapi.xyz/create?namespace=${NAMESPACE}&key=${KEY}&value=${BASE}`, {
-          method: 'POST'
-        });
-        // Sumar esta primera visita
-        await fetch(`https://countapi.xyz/update/${NAMESPACE}/${KEY}?amount=1`);
-      } else {
-        // Sumar una visita
-        await fetch(`https://countapi.xyz/update/${NAMESPACE}/${KEY}?amount=1`);
-      }
-      console.log('Visita registrada (invisible)');
-    } catch (error) {
-      console.error('Error al registrar visita:', error);
-    }
-  }
-
-  registrarVisitaInvisible();
-</script>				
+				
 
 	
 </br>
