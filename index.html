@@ -102,7 +102,24 @@
   iniciarContador();
 </script>
 
+<script>
+  // Esta función se ejecutará cuando la página cargue
+  async function registrarVisita() {
+    const urlDeMiSitio = window.location.href; // O usa un texto fijo como 'glosascroniquenses'
+    const userAgent = navigator.userAgent;
+    
+    try {
+      // Llamada a la API de LibreCounter para registrar la visita
+      await fetch(`https://librecounter.org/count?url=${encodeURIComponent(urlDeMiSitio)}&userAgent=${encodeURIComponent(userAgent)}`);
+      console.log("Visita registrada (contador oculto)");
+    } catch (error) {
+      console.error("Error al registrar la visita:", error);
+    }
+  }
 
+  // Ejecutar al cargar la página
+  registrarVisita();
+</script>
 				
 
 				
