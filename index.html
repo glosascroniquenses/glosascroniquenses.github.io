@@ -57,13 +57,6 @@
     });
 </script>
 
-
-<a href="https://librecounter.org/referer/show">
-<img src="https://librecounter.org/counter.svg" referrerpolicy="unsafe-url" alt="contador de visitas">
-</a>
-
-
-<!-- Contador que empieza en 10.024 y suma cada visita -->
 <!-- REVISAR EN:	https://librecounter.org/glosascroniquenses.github.io/siteStats-->
 				
 <div id="mi-contador" style="font-size:22px; color:#750C41; font-weight:bold; text-align:center;">Cargando visitas...</div>
@@ -104,27 +97,42 @@
   iniciarContador();
 </script>
 
+
+
+<!-- Contador invisible: solo registra la visita, no se ve nada -->
+<!-- Revisar en: https://countapi.xyz/get/glosascroniquenses/visitas -->
 <script>
-  // Esta función se ejecutará cuando la página cargue
-  async function registrarVisita() {
-    const urlDeMiSitio = window.location.href; // O usa un texto fijo como 'glosascroniquenses'
-    const userAgent = navigator.userAgent;
-    
+  const NAMESPACE = 'glosascroniquenses';  // Cámbialo por un nombre único para tu sitio
+  const KEY = 'visitas';
+  const BASE = 10024;  // Tu número de partida
+
+  async function registrarVisitaInvisible() {
     try {
-      // Llamada a la API de LibreCounter para registrar la visita
-      await fetch(`https://librecounter.org/count?url=${encodeURIComponent(urlDeMiSitio)}&userAgent=${encodeURIComponent(userAgent)}`);
-      console.log("Visita registrada (contador oculto)");
+      // Intentar obtener el contador actual
+      let res = await fetch(`https://countapi.xyz/get/${NAMESPACE}/${KEY}`);
+      let data = await res.json();
+
+      if (!data.value) {
+        // Crear el contador con el valor BASE
+        await fetch(`https://countapi.xyz/create?namespace=${NAMESPACE}&key=${KEY}&value=${BASE}`, {
+          method: 'POST'
+        });
+        // Sumar esta primera visita
+        await fetch(`https://countapi.xyz/update/${NAMESPACE}/${KEY}?amount=1`);
+      } else {
+        // Sumar una visita
+        await fetch(`https://countapi.xyz/update/${NAMESPACE}/${KEY}?amount=1`);
+      }
+      console.log('Visita registrada (invisible)');
     } catch (error) {
-      console.error("Error al registrar la visita:", error);
+      console.error('Error al registrar visita:', error);
     }
   }
 
-  // Ejecutar al cargar la página
-  registrarVisita();
-</script>
-				
+  registrarVisitaInvisible();
+</script>				
 
-				
+	
 </br>
 </br>
 			<center><a href="https://academiahistoria.org.pe/2026/02/19/diploma-al-merito-por-la-promocion-de-la-historia-del-peru-2026/" style="color: #750C41;"><img src="/fotos/sello.jpeg" align="center" width="400px"></a></h1>
