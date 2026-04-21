@@ -44,50 +44,7 @@
 		
 <!-- Contador visible desde 10.024 fecha cambio de contador: 28/03/2026, sigue con error, cuenta nuevamente desde 05/04/2026 hasta 21/04/2026-->
 
-<center><script type="text/javascript" src="https://contador.websiteout.com/js/30/0/10024/0"></script>
-				
-				
-				
-<!-- REVISAR EN:	https://librecounter.org/glosascroniquenses.github.io/siteStats  desde 21/04/2026-->
-
-<script>
-  const NAMESPACE = 'glosascroniquenses';  // cámbialo si quieres, pero que sea único
-  const KEY = 'visitas';
-  const BASE = 10024;  // tu número de partida
-
-  async function iniciarContador() {
-    try {
-      // 1. Intentar obtener el valor actual del contador
-      let res = await fetch(`https://countapi.xyz/get/${NAMESPACE}/${KEY}`);
-      let data = await res.json();
-
-      // Si el contador no existe (value es undefined), lo creamos con el valor BASE
-      if (!data.value) {
-        await fetch(`https://countapi.xyz/create?namespace=${NAMESPACE}&key=${KEY}&value=${BASE}`, {
-          method: 'POST'
-        });
-        // Después de crearlo, lo incrementamos en 1 (para contar esta primera visita)
-        await fetch(`https://countapi.xyz/update/${NAMESPACE}/${KEY}?amount=1`);
-        data = await (await fetch(`https://countapi.xyz/get/${NAMESPACE}/${KEY}`)).json();
-      } else {
-        // Si ya existe, lo incrementamos en 1
-        await fetch(`https://countapi.xyz/update/${NAMESPACE}/${KEY}?amount=1`);
-        data = await (await fetch(`https://countapi.xyz/get/${NAMESPACE}/${KEY}`)).json();
-      }
-
-      // Mostrar el número con formato español
-      document.getElementById('mi-contador').textContent = data.value.toLocaleString('es-ES');
-    } catch (error) {
-      console.error('Error con el contador:', error);
-      document.getElementById('mi-contador').textContent = BASE.toLocaleString('es-ES');
-    }
-  }
-
-  iniciarContador();
-</script>
-				
-
-	
+			<center><script type="text/javascript" src="https://contador.websiteout.com/js/30/0/10024/0"></script>
 </br>
 </br>
 			<center><a href="https://academiahistoria.org.pe/2026/02/19/diploma-al-merito-por-la-promocion-de-la-historia-del-peru-2026/" style="color: #750C41;"><img src="/fotos/sello.jpeg" align="center" width="400px"></a></h1>
