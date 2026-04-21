@@ -61,6 +61,50 @@
 <a href="https://librecounter.org/referer/show">
 <img src="https://librecounter.org/counter.svg" referrerpolicy="unsafe-url" alt="contador de visitas">
 </a>
+
+
+<!-- Contador que empieza en 10.024 y suma cada visita -->
+<div id="mi-contador" style="font-size:22px; color:#750C41; font-weight:bold; text-align:center;">Cargando visitas...</div>
+
+<script>
+  const NAMESPACE = 'glosascroniquenses';  // cámbialo si quieres, pero que sea único
+  const KEY = 'visitas';
+  const BASE = 10024;  // tu número de partida
+
+  async function iniciarContador() {
+    try {
+      // 1. Intentar obtener el valor actual del contador
+      let res = await fetch(`https://countapi.xyz/get/${NAMESPACE}/${KEY}`);
+      let data = await res.json();
+
+      // Si el contador no existe (value es undefined), lo creamos con el valor BASE
+      if (!data.value) {
+        await fetch(`https://countapi.xyz/create?namespace=${NAMESPACE}&key=${KEY}&value=${BASE}`, {
+          method: 'POST'
+        });
+        // Después de crearlo, lo incrementamos en 1 (para contar esta primera visita)
+        await fetch(`https://countapi.xyz/update/${NAMESPACE}/${KEY}?amount=1`);
+        data = await (await fetch(`https://countapi.xyz/get/${NAMESPACE}/${KEY}`)).json();
+      } else {
+        // Si ya existe, lo incrementamos en 1
+        await fetch(`https://countapi.xyz/update/${NAMESPACE}/${KEY}?amount=1`);
+        data = await (await fetch(`https://countapi.xyz/get/${NAMESPACE}/${KEY}`)).json();
+      }
+
+      // Mostrar el número con formato español
+      document.getElementById('mi-contador').textContent = data.value.toLocaleString('es-ES');
+    } catch (error) {
+      console.error('Error con el contador:', error);
+      document.getElementById('mi-contador').textContent = BASE.toLocaleString('es-ES');
+    }
+  }
+
+  iniciarContador();
+</script>
+
+
+				
+
 				
 </br>
 </br>
