@@ -1,1 +1,168 @@
+---
+layout: default
+title: Buscador
+---
 
+<h1>Buscador</h1>
+<p style="color: var(--grey-color); font-size: 0.95em; margin-bottom: 1.5em;">
+  Busca términos en todo el glosario por palabra o por cronista.
+</p>
+
+<div id="search-container">
+  <input
+    type="text"
+    id="search-input"
+    placeholder="Escribe un término o nombre de cronista…"
+    autocomplete="off"
+    style="width:100%; padding:10px 14px; font-size:1em; border:1px solid #ccc; border-radius:6px; margin-bottom:0.75em;"
+  />
+
+  <div id="filter-bar" style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1em;"></div>
+
+  <p id="search-stats" style="font-size:0.85em; color:#888; margin-bottom:0.5em;"></p>
+
+  <ul id="search-results" style="list-style:none; padding:0; margin:0; border:1px solid #e0e0e0; border-radius:6px; overflow:hidden; max-height:60vh; overflow-y:auto;"></ul>
+</div>
+
+<p id="loading-msg" style="color:#888; font-size:0.9em;">Cargando índice de términos…</p>
+
+<script>
+(function () {
+  var BASE = "https://glosascroniquenses.github.io";
+  var INDEX_URL = BASE + "/GlosarioB/";
+  var terms = [];
+  var activeAuthor = null;
+
+  /* ── 1. Fetch + parse GlosarioB ── */
+  fetch(INDEX_URL)
+    .then(function (r) { return r.text(); })
+    .then(function (html) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, "text/html");
+      var links = doc.querySelectorAll("ul li a");
+
+      links.forEach(function (a) {
+        var raw = a.textContent.trim();
+        var href = a.getAttribute("href") || "";
+        /* Format: "término [Cronista]" */
+        var match = raw.match(/^(.+?)\s+\[(.+?)\]$/);
+        if (match) {
+          terms.push({ term: match[1].trim(), author: match[2].trim(), url: href });
+        }
+      });
+
+      document.getElementById("loading-msg").style.display = "none";
+      buildFilters();
+      renderResults();
+    })
+    .catch(function () {
+      document.getElementById("loading-msg").textContent =
+        "No se pudo cargar el índice. Intenta recargar la página.";
+    });
+
+  /* ── 2. Filters by author ── */
+  function buildFilters() {
+    var bar = document.getElementById("filter-bar");
+    var authors = Array.from(new Set(terms.map(function (t) { return t.author; }))).sort();
+
+    var allBtn = makeBtn("Todos", null);
+    bar.appendChild(allBtn);
+
+    authors.forEach(function (a) {
+      bar.appendChild(makeBtn(a.split(" ").pop(), a)); /* last surname */
+    });
+  }
+
+  function makeBtn(label, author) {
+    var btn = document.createElement("button");
+    btn.textContent = label;
+    btn.title = author || "Todos los cronistas";
+    btn.style.cssText =
+      "font-size:0.78em; padding:3px 10px; border:1px solid #ccc; border-radius:20px;" +
+      "background:#fff; cursor:pointer; white-space:nowrap;";
+    btn.addEventListener("click", function () {
+      activeAuthor = author;
+      updateButtonStyles();
+      renderResults();
+    });
+    btn.dataset.author = author || "__all__";
+    return btn;
+  }
+
+  function updateButtonStyles() {
+    document.querySelectorAll("#filter-bar button").forEach(function (b) {
+      var isActive =
+        (activeAuthor === null && b.dataset.author === "__all__") ||
+        b.dataset.author === activeAuthor;
+      b.style.background = isActive ? "#333" : "#fff";
+      b.style.color = isActive ? "#fff" : "#333";
+      b.style.borderColor = isActive ? "#333" : "#ccc";
+    });
+  }
+
+  /* ── 3. Render results ── */
+  function renderResults() {
+    var q = document.getElementById("search-input").value.trim().toLowerCase();
+    var list = terms;
+
+    if (activeAuthor) {
+      list = list.filter(function (t) { return t.author === activeAuthor; });
+    }
+    if (q) {
+      list = list.filter(function (t) {
+        return t.term.toLowerCase().includes(q) || t.author.toLowerCase().includes(q);
+      });
+    }
+
+    var statsEl = document.getElementById("search-stats");
+    statsEl.textContent =
+      list.length + " resultado" + (list.length !== 1 ? "s" : "") +
+      (q ? ' para "' + q + '"' : "");
+
+    var ul = document.getElementById("search-results");
+    ul.innerHTML = "";
+
+    if (list.length === 0) {
+      ul.innerHTML =
+        '<li style="padding:1.5em; text-align:center; color:#999;">No se encontraron términos.</li>';
+      return;
+    }
+
+    list.slice(0, 200).forEach(function (t) {
+      var li = document.createElement("li");
+      li.style.cssText = "border-bottom:1px solid #f0f0f0;";
+
+      var a = document.createElement("a");
+      a.href = t.url;
+      a.style.cssText =
+        "display:flex; justify-content:space-between; align-items:center;" +
+        "padding:9px 14px; text-decoration:none; color:inherit;";
+      a.addEventListener("mouseenter", function () { a.style.background = "#f9f9f9"; });
+      a.addEventListener("mouseleave", function () { a.style.background = ""; });
+
+      var termSpan = document.createElement("span");
+      termSpan.style.fontWeight = "500";
+      termSpan.innerHTML = highlight(t.term, q);
+
+      var authorSpan = document.createElement("span");
+      authorSpan.textContent = t.author;
+      authorSpan.style.cssText =
+        "font-size:0.78em; color:#888; background:#f3f3f3;" +
+        "padding:2px 8px; border-radius:12px; margin-left:8px; white-space:nowrap; flex-shrink:0;";
+
+      a.appendChild(termSpan);
+      a.appendChild(authorSpan);
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  }
+
+  function highlight(text, q) {
+    if (!q) return text;
+    var re = new RegExp("(" + q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "gi");
+    return text.replace(re, '<mark style="background:#fff3b0; font-weight:700;">$1</mark>');
+  }
+
+  document.getElementById("search-input").addEventListener("input", renderResults);
+})();
+</script>
