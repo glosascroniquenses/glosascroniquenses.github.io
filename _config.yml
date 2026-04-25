@@ -24,3 +24,6 @@ defaults:
       type: autores
     values:
       layout: autore.html
+
+- title: "Buscador"
+  url: /buscar
